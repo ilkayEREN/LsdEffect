@@ -1,2 +1,2 @@
 # LsdEffect
-i did a lsd effect with python
+I have created an LSD effect using Python libraries with the intention of creating an enjoyable visual experience for myself. However, I later realized that the resulting effect resembles the visuals described by individuals under the influence of LSD. Now, I am sharing this with you, and there is nothing illegal about it. However, it is not recommended for individuals with epilepsy to view the program.
