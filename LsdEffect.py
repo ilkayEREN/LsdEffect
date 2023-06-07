@@ -2,66 +2,66 @@ import cv2
 import numpy as np
 import random
 
-# Görüntü boyutları
+# Image dimensions
 width, height = 800, 800
 
-# Siyah bir arka plan oluşturma
+# Create a black background
 image = np.zeros((height, width, 3), dtype=np.uint8)
 
-# Halka merkezi ve yarıçapı
+# Circle center and radius
 circle_center_x = width // 2
 circle_center_y = height // 2
 radius = 300
 
-# Halka sayısı
+# Number of circles
 num_circles = 100
 
-# Halka efekti hızı
+# Circle effect speed
 speed = 15
 
-# Halka kalınlığı
+# Circle thickness
 thickness = 4
 
-# Halkalar arasındaki boşluk
-gap = 4 
+# Gap between circles
+gap = 4
 
-# Renklerin listesi
+# List of colors
 colors = []
 
-# Başlangıç yönü
-direction = 1  # 1: Sağa doğru, -1: Sola doğru
+# Initial direction
+direction = 1  # 1: Move right, -1: Move left
 
-# Halkalara renk atama
+# Assign colors to circles
 for i in range(num_circles):
     colors.append((random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
 
-# Sonsuz döngüde halkaları çizme
+# Draw circles in an infinite loop
 while True:
-    # Halkaları çizme
-    image = np.zeros((height, width, 3), dtype=np.uint8)  # Siyah bir arka plan
+    # Draw circles
+    image = np.zeros((height, width, 3), dtype=np.uint8)  # Black background
     for i in range(num_circles):
-        current_radius = i * (thickness + gap) 
+        current_radius = i * (thickness + gap)
         cv2.circle(image, (circle_center_x, circle_center_y), current_radius, colors[i], thickness=thickness)
 
-    # Ekrana gösterme
+    # Display image
     cv2.imshow("LSD effect by ilkay eren", image)
     cv2.waitKey(1)
 
-    # Yön değiştirme
+    # Change direction
     if circle_center_x >= width - radius:
-        direction = -1  # Sola doğru yönlendir
+        direction = -1  # Move left
     elif circle_center_x <= radius:
-        direction = 1  # Sağa doğru yönlendir
+        direction = 1  # Move right
 
-    # Merkezi güncelleme
+    # Update center position
     circle_center_x += direction * speed
 
-    # Renk aktarımı
+    # Transfer colors
     colors.insert(0, colors.pop())
 
-    # Eğer 'q' tuşuna basılırsa döngüyü kır
+    # Break the loop if 'q' key is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Pencereyi kapatma
+# Close the window
 cv2.destroyAllWindows()
