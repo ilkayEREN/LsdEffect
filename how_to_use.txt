@@ -1,0 +1,31 @@
+Step 1: Install OpenCV
+
+Open the command prompt (CMD) or terminal.
+Execute the following command to install OpenCV:
+Copy code
+pip install opencv-python
+Step 2: Save the Code
+
+Create a new Python file and copy the provided code into the file.
+Save the file with a .py extension, for example, lsd_effect.py.
+Step 3: Run the Application
+
+Open the command prompt (CMD) or terminal.
+Navigate to the directory where you saved the lsd_effect.py file using the cd command.
+Execute the following command to run the application:
+Copy code
+python lsd_effect.py
+Step 4: Enjoy the LSD Effect
+
+Once the application starts running, a window titled "LSD effect by ilkay eren" will appear.
+You will see the LSD-like effect with moving concentric circles of various colors and thickness.
+Step 5: Quitting the Application
+
+To quit the application, press the 'q' key while the application window is active.
+The window will close, and the application will exit.
+Make sure you have Python and pip installed on your system before installing the OpenCV module. You can download Python from the official website (python.org) and verify the installation by running the following command in the command prompt:
+
+css
+Copy code
+python --version
+After following these steps, you should be able to run the LSD effect application successfully and enjoy the mesmerizing visual effect.
